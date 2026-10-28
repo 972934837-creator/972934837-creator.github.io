@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>校园专属 · 寻物智联</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="i18n.js"></script>
+</head>
+<body onload="initLang()">
+<svg class="float-deco d1" width="60" height="60" viewBox="0 0 60 60"><path d="M30 5 L36 22 L54 22 L40 33 L46 50 L30 40 L14 50 L20 33 L6 22 L24 22 Z" fill="#FFE66D" stroke="#3D2C2E" stroke-width="3" stroke-linejoin="round"/></svg>
+<svg class="float-deco d2" width="70" height="70" viewBox="0 0 70 70"><circle cx="35" cy="35" r="28" fill="#FF6B9D" stroke="#3D2C2E" stroke-width="3"/><circle cx="27" cy="30" r="4" fill="#3D2C2E"/><circle cx="43" cy="30" r="4" fill="#3D2C2E"/><path d="M25 42 Q35 52 45 42" stroke="#3D2C2E" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+<svg class="float-deco d3" width="64" height="64" viewBox="0 0 64 64"><path d="M32 8 C20 8 12 18 12 30 C12 44 32 58 32 58 C32 58 52 44 52 30 C52 18 44 8 32 8 Z" fill="#4ECDC4" stroke="#3D2C2E" stroke-width="3"/><path d="M32 22 L35 30 L43 30 L37 35 L39 43 L32 38 L25 43 L27 35 L21 30 L29 30 Z" fill="#FFF" stroke="#3D2C2E" stroke-width="2"/></svg>
+<svg class="float-deco d4" width="56" height="56" viewBox="0 0 56 56"><rect x="8" y="20" width="40" height="28" rx="6" fill="#A78BFA" stroke="#3D2C2E" stroke-width="3"/><circle cx="28" cy="34" r="7" fill="#FFF" stroke="#3D2C2E" stroke-width="2.5"/><circle cx="28" cy="34" r="2.5" fill="#3D2C2E"/></svg>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="logo"><span class="logo-badge"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="11" cy="11" r="7" fill="none" stroke="#fff" stroke-width="3"/><line x1="16" y1="16" x2="23" y2="23" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span>寻物智联</div>
+    <div class="nav-links">
+      <select id="langSwitch" onchange="setLang(this.value)" style="margin-right:12px;padding:4px 8px;border-radius:8px;border:1px solid #3D2C2E;background:#FFF">
+        <option value="zh">中文</option>
+        <option value="en">English</option>
+      </select>
+      <a href="index.html" data-i18n="nav.home">🏠 首页</a>
+      <a href="lost.html" data-i18n="nav.lost">失物</a>
+      <a href="found.html" data-i18n="nav.found">招领</a>
+      <a href="privacy.html" data-i18n="nav.privacy">隐私</a>
+      <a href="campus.html" data-i18n="nav.campus">校园</a>
+      <a class="back-home" href="index.html" data-i18n="nav.back">← 返回首页</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="page-hero reveal">
+      <span class="ph-emoji">🎓</span>
+      <h1 data-i18n="campus.title">比通用平台更懂你的校园</h1>
+      <p data-i18n="campus.sub">围绕教学楼、食堂、图书馆、操场等校园场景定制，熟悉你的日常动线，匹配更精准。</p>
+    </div>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">SCENES</span><h2 data-i18n="campus.h1">六大校园场景</h2><p data-i18n="campus.h1sub">每个场景都记录着高发失物与寻回故事</p></div>
+    <div class="scene-grid">
+      <div class="scene reveal"><span class="emoji">📚</span><h3 data-i18n="campus.s1">图书馆</h3><div class="sub" data-i18n="campus.s1sub">自习圣地，也是丢东西重灾区</div><div class="hot"><span data-i18n="campus.hot11">📱 手机</span><span data-i18n="campus.hot12">🔌 充电宝</span><span data-i18n="campus.hot13">💳 校园卡</span><span data-i18n="campus.hot14">📖 课本</span></div></div>
+      <div class="scene reveal"><span class="emoji">🍚</span><h3 data-i18n="campus.s2">食堂</h3><div class="sub" data-i18n="campus.s2sub">端饭端到忘我，东西落下</div><div class="hot"><span data-i18n="campus.hot21">💳 饭卡</span><span data-i18n="campus.hot22">🎒 书包</span><span data-i18n="campus.hot23">💧 水杯</span><span data-i18n="campus.hot24">🧥 外套</span></div></div>
+      <div class="scene reveal"><span class="emoji">🏫</span><h3 data-i18n="campus.s3">教学楼</h3><div class="sub" data-i18n="campus.s3sub">换教室像搬家，落东西常态</div><div class="hot"><span data-i18n="campus.hot31">🎧 耳机</span><span data-i18n="campus.hot32">🖊️ 文具</span><span data-i18n="campus.hot33">💻 平板</span><span data-i18n="campus.hot34">📒 笔记本</span></div></div>
+      <div class="scene reveal"><span class="emoji">🏃</span><h3 data-i18n="campus.s4">操场</h3><div class="sub" data-i18n="campus.s4sub">运动一爽，随身物就拜拜</div><div class="hot"><span data-i18n="campus.hot41">🔑 钥匙</span><span data-i18n="campus.hot42">⌚ 手表</span><span data-i18n="campus.hot43">💧 水杯</span><span data-i18n="campus.hot44">🧢 帽子</span></div></div>
+      <div class="scene reveal"><span class="emoji">📖</span><h3 data-i18n="campus.s5">自习室</h3><div class="sub" data-i18n="campus.s5sub">占座一时爽，走时全忘光</div><div class="hot"><span data-i18n="campus.hot51">📖 课本</span><span data-i18n="campus.hot52">🔌 充电宝</span><span data-i18n="campus.hot53">🎧 耳机</span><span data-i18n="campus.hot54">💼 文件袋</span></div></div>
+      <div class="scene reveal"><span class="emoji">🛏️</span><h3 data-i18n="campus.s6">宿舍</h3><div class="sub" data-i18n="campus.s6sub">搬进搬出，东西最容易混</div><div class="hot"><span data-i18n="campus.hot61">🔑 钥匙</span><span data-i18n="campus.hot62">💳 校园卡</span><span data-i18n="campus.hot63">🌂 雨伞</span><span data-i18n="campus.hot64">📦 快递</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">MAP</span><h2 data-i18n="campus.h2">校园失物热力示意</h2><p data-i18n="campus.h2sub">颜色越深，丢东西越多</p></div>
+    <div class="campus-map reveal">
+      <svg viewBox="0 0 800 360" width="100%" style="display:block">
+        <rect x="0" y="0" width="800" height="360" fill="#FFFDF7" stroke="#3D2C2E" stroke-width="3" rx="16"/>
+        <g font-family="ZCOOL KuaiLe" font-size="18" fill="#3D2C2E" text-anchor="middle">
+          <rect x="40" y="40" width="180" height="120" fill="#FF6B9D" stroke="#3D2C2E" stroke-width="3" rx="12"/><text x="130" y="95" data-i18n="campus.map1">📚 图书馆</text><text x="130" y="120" font-size="14" fill="#fff" data-i18n="campus.mapt1">高发 🔥🔥🔥</text>
+          <rect x="250" y="40" width="180" height="120" fill="#FFB84D" stroke="#3D2C2E" stroke-width="3" rx="12"/><text x="340" y="95" data-i18n="campus.map2">🍚 二食堂</text><text x="340" y="120" font-size="14" fill="#fff" data-i18n="campus.mapt2">高发 🔥🔥</text>
+          <rect x="460" y="40" width="300" height="120" fill="#A78BFA" stroke="#3D2C2E" stroke-width="3" rx="12"/><text x="610" y="95" data-i18n="campus.map3">🏫 教学楼 A/B/C</text><text x="610" y="120" font-size="14" fill="#fff" data-i18n="campus.mapt3">高发 🔥🔥🔥</text>
+          <rect x="40" y="190" width="300" height="130" fill="#4ECDC4" stroke="#3D2C2E" stroke-width="3" rx="12"/><text x="190" y="250" data-i18n="campus.map4">🏃 操场</text><text x="190" y="278" font-size="14" fill="#fff" data-i18n="campus.mapt4">高发 🔥🔥</text>
+          <rect x="370" y="190" width="180" height="130" fill="#95E1A3" stroke="#3D2C2E" stroke-width="3" rx="12"/><text x="460" y="250" data-i18n="campus.map5">📖 自习室</text><text x="460" y="278" font-size="14" fill="#3D2C2E" data-i18n="campus.mapt5">高发 🔥</text>
+          <rect x="580" y="190" width="180" height="130" fill="#FFE66D" stroke="#3D2C2E" stroke-width="3" rx="12"/><text x="670" y="250" data-i18n="campus.map6">🛏️ 宿舍区</text><text x="670" y="278" font-size="14" fill="#3D2C2E" data-i18n="campus.mapt6">高发 🔥</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">STATS</span><h2 data-i18n="campus.h3">各场景失物高发榜</h2><p data-i18n="campus.h3sub">近 30 天数据</p></div>
+    <div class="bar-list">
+      <div class="bar-row reveal"><div class="lab" data-i18n="campus.bar1">📚 图书馆</div><div class="track"><div class="fill" style="width:88%;background:#FF6B9D"></div></div><div class="num">312</div></div>
+      <div class="bar-row reveal"><div class="lab" data-i18n="campus.bar2">🏫 教学楼</div><div class="track"><div class="fill" style="width:76%;background:#A78BFA"></div></div><div class="num">268</div></div>
+      <div class="bar-row reveal"><div class="lab" data-i18n="campus.bar3">🍚 食堂</div><div class="track"><div class="fill" style="width:58%;background:#FFB84D"></div></div><div class="num">204</div></div>
+      <div class="bar-row reveal"><div class="lab" data-i18n="campus.bar4">🏃 操场</div><div class="track"><div class="fill" style="width:46%;background:#4ECDC4"></div></div><div class="num">162</div></div>
+      <div class="bar-row reveal"><div class="lab" data-i18n="campus.bar5">📖 自习室</div><div class="track"><div class="fill" style="width:32%;background:#95E1A3"></div></div><div class="num">113</div></div>
+      <div class="bar-row reveal"><div class="lab" data-i18n="campus.bar6">🛏️ 宿舍</div><div class="track"><div class="fill" style="width:24%;background:#FFE66D"></div></div><div class="num">85</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <h2 data-i18n="campus.ctaH">在你的地盘，找回你的东西 🎯</h2>
+      <p data-i18n="campus.ctaP">选一个场景，开始登记吧</p>
+      <a class="btn btn-pink" href="lost.html" data-i18n="campus.ctaLost">📦 登记失物</a>
+      <a class="btn btn-teal" href="found.html" data-i18n="campus.ctaFound">🤝 登记招领</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><span class="logo-badge"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="11" cy="11" r="7" fill="none" stroke="#fff" stroke-width="3"/><line x1="16" y1="16" x2="23" y2="23" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span>寻物智联</div>
+    <p data-i18n="footer.slogan">让每一份粗心，都能被温柔接住 💛</p>
+    <div class="links"><a href="index.html" data-i18n="footer.home">首页</a><a href="lost.html" data-i18n="footer.lost">失物登记</a><a href="found.html" data-i18n="footer.found">招领登记</a><a href="privacy.html" data-i18n="footer.privacy">隐私保护</a><a href="campus.html" data-i18n="footer.campus">校园场景</a></div>
+    <div class="copy" data-i18n="footer.copy">© 2026 寻物智联 · 校园失物招领智能匹配乐园</div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
